@@ -1,0 +1,9 @@
+server:
+  port: 3000
+
+
+
+# Spring配置
+spring:
+  profiles:
+    active: @profiles.active@
