@@ -7,3 +7,21 @@ server:
 spring:
   profiles:
     active: @profiles.active@
+
+
+# MyBatisPlus配置
+# https://baomidou.com/config/
+mybatis-plus:
+  # 不支持多包, 如有需要可在注解配置 或 提升扫包等级
+  # 例如 com.**.**.mapper
+  mapperPackage: com.xie.**.mapper
+  # 对应的 XML 文件位置
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+  # 实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.xie.**.domain
+  global-config:
+    dbConfig:
+      # 主键类型
+      # AUTO 自增 NONE 空 INPUT 用户输入 ASSIGN_ID 雪花 ASSIGN_UUID 唯一 UUID
+      # 如需改为自增 需要将数据库表全部设置为自增
+      idType: ASSIGN_ID

@@ -22,5 +22,6 @@
         <module>pure-common-core</module>
         <module>pure-common-doc</module>
         <module>pure-common-web</module>
+        <module>pure-common-mybatis</module>
     </modules>
 </project>

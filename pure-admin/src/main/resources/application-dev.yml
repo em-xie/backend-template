@@ -1,0 +1,9 @@
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pure
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+    initialize: true
+    type: com.zaxxer.hikari.HikariDataSource

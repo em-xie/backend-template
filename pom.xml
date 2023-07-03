@@ -19,6 +19,9 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
         <lombok.version>1.18.26</lombok.version>
+
+        <spring-boot.mybatis>3.0.1</spring-boot.mybatis>
+        <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
         <!-- 插件版本 -->
         <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
         <maven-war-plugin.version>3.2.2</maven-war-plugin.version>
@@ -80,6 +83,25 @@
                 <groupId>com.xie</groupId>
                 <artifactId>pure-system</artifactId>
                 <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>pure-demo</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${spring-boot.mybatis}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
             </dependency>
 
             <!-- common 的依赖配置-->

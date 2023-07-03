@@ -30,6 +30,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- PostgreSql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.xie</groupId>
             <artifactId>pure-common-core</artifactId>
@@ -38,6 +44,11 @@
         <dependency>
             <groupId>com.xie</groupId>
             <artifactId>pure-system</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>pure-demo</artifactId>
         </dependency>
 
     </dependencies>
