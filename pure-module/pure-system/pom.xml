@@ -35,5 +35,9 @@
             <artifactId>pure-common-mybatis</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>pure-common-security</artifactId>
+        </dependency>
     </dependencies>
 </project>

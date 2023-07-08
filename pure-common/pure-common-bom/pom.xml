@@ -40,6 +40,24 @@
                 <artifactId>pure-common-mybatis</artifactId>
                 <version>${revision}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>pure-common-satoken</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>pure-common-security</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>pure-common-json</artifactId>
+                <version>${revision}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

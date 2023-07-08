@@ -23,5 +23,8 @@
         <module>pure-common-doc</module>
         <module>pure-common-web</module>
         <module>pure-common-mybatis</module>
+        <module>pure-common-satoken</module>
+        <module>pure-common-security</module>
+        <module>pure-common-json</module>
     </modules>
 </project>

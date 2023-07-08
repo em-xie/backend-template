@@ -22,6 +22,12 @@
             <groupId>com.xie</groupId>
             <artifactId>pure-common-core</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>pure-common-satoken</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
