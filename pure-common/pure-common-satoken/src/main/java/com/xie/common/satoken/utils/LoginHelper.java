@@ -69,5 +69,22 @@ public class LoginHelper {
                 model.setExtra(USER_KEY, loginUser.getUserId()));
         StpUtil.getTokenSession().set(LOGIN_USER_KEY, loginUser);
     }
+    /**
+     * 获取用户id
+     */
+    public static Long getUserId() {
+        Long userId;
+        try {
+            userId = Convert.toLong(SaHolder.getStorage().get(USER_KEY));
+            if (ObjectUtil.isNull(userId)) {
+                userId = Convert.toLong(StpUtil.getExtra(USER_KEY));
+                SaHolder.getStorage().set(USER_KEY, userId);
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        return userId;
+    }
+
 
 }

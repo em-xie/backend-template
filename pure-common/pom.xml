@@ -26,5 +26,7 @@
         <module>pure-common-satoken</module>
         <module>pure-common-security</module>
         <module>pure-common-json</module>
+        <module>pure-common-social</module>
+        <module>pure-common-redis</module>
     </modules>
 </project>

@@ -51,6 +51,17 @@
             <artifactId>pure-demo</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>pure-common-social</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>me.zhyd.oauth</groupId>
+            <artifactId>JustAuth</artifactId>
+        </dependency>
+
+
     </dependencies>
 
     <build>

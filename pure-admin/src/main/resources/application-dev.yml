@@ -24,3 +24,108 @@ spring:
       connectionTestQuery: SELECT 1
       # 多久检查一次连接的活性
       keepaliveTime: 30000
+
+
+--- # redis 单机配置(单机与集群只能开启一个另一个需要注释掉)
+spring.data:
+  redis:
+    # 地址
+    host: localhost
+    # 端口，默认为6379
+    port: 6379
+    # 数据库索引
+    database: 0
+    # 密码(如没有密码请注释掉)
+    password: 123456
+    # 连接超时时间
+    timeout: 10s
+    # 是否开启ssl
+    ssl: false
+
+redisson:
+  # redis key前缀
+  keyPrefix: pure
+  # 线程池数量
+  threads: 4
+  # Netty线程池数量
+  nettyThreads: 8
+  # 单节点配置
+  singleServerConfig:
+    # 客户端名称
+    clientName: pure
+    # 最小空闲连接数
+    connectionMinimumIdleSize: 8
+    # 连接池大小
+    connectionPoolSize: 32
+    # 连接空闲超时，单位：毫秒
+    idleConnectionTimeout: 10000
+    # 命令等待超时，单位：毫秒
+    timeout: 3000
+    # 发布和订阅连接池大小
+    subscriptionConnectionPoolSize: 50
+
+--- # 三方授权
+justauth:
+  enabled: true
+  address: http://localhost:3000
+  type:
+    qq:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=qq
+      union-id: false
+    weibo:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=weibo
+    gitee:
+      client-id: 914******************98
+      client-secret: 02*****************ac
+      redirect-uri: ${justauth.address}/social-callback?source=gitee
+    dingtalk:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=dingtalk
+    baidu:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=baidu
+    csdn:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=csdn
+    coding:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=coding
+      coding-group-name: xx
+    oschina:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=oschina
+    alipay:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=alipay
+      alipay-public-key: MIIB**************DAQAB
+    wechat_open:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=wechat_open
+    wechat_mp:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=wechat_mp
+    wechat_enterprise:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=wechat_enterprise
+      agent-id: 1000002
+    gitlab:
+      client-id: 10**********6
+      client-secret: 1f7d08**********5b7**********29e
+      redirect-uri: ${justauth.address}/social-callback?source=gitlab
+    github:
+      client-id: 645bf981ea4e25ed9183
+      client-secret: c2ae89d5b12dc025f173158cc62d0014e29c43c9
+      redirect-uri: ${justauth.address}/social-callback?source=github

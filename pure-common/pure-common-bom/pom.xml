@@ -58,6 +58,17 @@
                 <artifactId>pure-common-json</artifactId>
                 <version>${revision}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>pure-common-social</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>pure-common-redis</artifactId>
+                <version>${revision}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
