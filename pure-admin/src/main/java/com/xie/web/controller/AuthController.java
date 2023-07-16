@@ -4,6 +4,7 @@ import cn.dev33.satoken.annotation.SaIgnore;
 import cn.hutool.core.util.ObjectUtil;
 import com.xie.common.core.domain.R;
 import com.xie.common.core.domain.model.LoginBody;
+import com.xie.common.core.domain.model.RegisterBody;
 import com.xie.common.core.utils.StringUtils;
 import com.xie.common.social.config.properties.SocialLoginConfigProperties;
 import com.xie.common.social.config.properties.SocialProperties;
@@ -13,6 +14,7 @@ import com.xie.system.service.impl.SysClientService;
 import com.xie.web.domain.LoginVo;
 import com.xie.web.service.IAuthStrategy;
 import com.xie.web.service.SysLoginService;
+import com.xie.web.service.SysRegisterService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import me.zhyd.oauth.model.AuthResponse;
@@ -38,6 +40,7 @@ public class AuthController {
     private final SysClientService sysClientService;
     private final SocialProperties socialProperties;
     private final SysLoginService loginService;
+    private final SysRegisterService registerService;
     @PostMapping("/login")
     public R<LoginVo> Login(@Validated @RequestBody LoginBody loginBody){
         String clientId = loginBody.getClientId();
@@ -74,6 +77,22 @@ public class AuthController {
         return loginService.sociaRegister(authUserData);
     }
 
+    /**
+     * 退出登录
+     */
+    @PostMapping("/logout")
+    public R<Void> logout() {
+        loginService.logout();
+        return R.ok("退出成功");
+    }
 
+    /**
+     * 用户注册
+     */
+    @PostMapping("/register")
+    public R<Void> register(@Validated @RequestBody RegisterBody user) {
+        registerService.register(user);
+        return R.ok();
+    }
 
 }

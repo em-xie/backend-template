@@ -29,11 +29,6 @@ public class SysUserVo implements Serializable {
 
 
     /**
-     * 部门ID
-     */
-    private Long deptId;
-
-    /**
      * 用户账号
      */
     private String userName;

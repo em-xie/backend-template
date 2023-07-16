@@ -1,5 +1,7 @@
 package com.xie.web.service;
 
+import cn.dev33.satoken.exception.NotLoginException;
+import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.xie.common.core.domain.R;
@@ -58,5 +60,17 @@ public class SysLoginService {
         sysSocialService.insertByBo(bo);
         return R.ok();
 
+    }
+
+    public void logout() {
+        try {
+            LoginUser loginUser = LoginHelper.getLoginUser();
+        }catch (NotLoginException ignored){
+        }finally {
+            try {
+                StpUtil.logout();
+            } catch (NotLoginException ignored) {
+            }
+        }
     }
 }
