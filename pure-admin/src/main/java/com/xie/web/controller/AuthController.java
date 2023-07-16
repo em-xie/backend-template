@@ -40,7 +40,6 @@ public class AuthController {
     private final SysLoginService loginService;
     @PostMapping("/login")
     public R<LoginVo> Login(@Validated @RequestBody LoginBody loginBody){
-        System.out.println(loginBody);
         String clientId = loginBody.getClientId();
         String grantType = loginBody.getGrantType();
         SysClient sysClient = sysClientService.queryByClientId(clientId);

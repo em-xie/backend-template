@@ -1,5 +1,6 @@
 package com.xie.common.social.utils;
 
+import com.xie.common.core.constant.GlobalConstants;
 import com.xie.common.redis.utils.RedisUtils;
 import com.xie.common.social.config.properties.SocialProperties;
 import lombok.AllArgsConstructor;
@@ -14,8 +15,6 @@ import java.time.Duration;
 @AllArgsConstructor
 public class AuthRedisStateCache implements AuthStateCache {
 
-    private final SocialProperties socialProperties;
-
     /**
      * 存入缓存
      *
@@ -24,7 +23,8 @@ public class AuthRedisStateCache implements AuthStateCache {
      */
     @Override
     public void cache(String key, String value) {
-        RedisUtils.setCacheObject(key, value, Duration.ofMillis(socialProperties.getTimeout()));
+        // 授权超时时间 默认三分钟
+        RedisUtils.setCacheObject(GlobalConstants.SOCIAL_AUTH_CODE_KEY + key, value, Duration.ofMinutes(3));
     }
 
     /**
@@ -36,7 +36,7 @@ public class AuthRedisStateCache implements AuthStateCache {
      */
     @Override
     public void cache(String key, String value, long timeout) {
-        RedisUtils.setCacheObject(key, value, Duration.ofMillis(timeout));
+        RedisUtils.setCacheObject(GlobalConstants.SOCIAL_AUTH_CODE_KEY + key, value, Duration.ofMillis(timeout));
     }
 
     /**
@@ -47,7 +47,7 @@ public class AuthRedisStateCache implements AuthStateCache {
      */
     @Override
     public String get(String key) {
-        return RedisUtils.getCacheObject(key);
+        return RedisUtils.getCacheObject(GlobalConstants.SOCIAL_AUTH_CODE_KEY + key);
     }
 
     /**
@@ -58,6 +58,7 @@ public class AuthRedisStateCache implements AuthStateCache {
      */
     @Override
     public boolean containsKey(String key) {
-        return RedisUtils.hasKey(key);
+        return RedisUtils.hasKey(GlobalConstants.SOCIAL_AUTH_CODE_KEY + key);
     }
 }
+
