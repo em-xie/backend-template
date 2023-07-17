@@ -27,6 +27,23 @@ spring:
       # 允许对象忽略json中不存在的属性
       fail_on_unknown_properties: false
 
+
+# 日志配置
+logging:
+  level:
+    org.dromara: @logging.level@
+    org.springframework: warn
+  config: classpath:logback-plus.xml
+
+## 全局线程池相关配置
+#thread-pool:
+#  # 是否开启线程池
+#  enabled: false
+#  # 队列最大长度
+#  queueCapacity: 128
+#  # 线程池维护线程所允许的空闲时间
+#  keepAliveSeconds: 300
+
 --- # 分布式锁 lock4j 全局配置
 lock4j:
   # 获取分布式锁超时时间，默认为 3000 毫秒
@@ -87,3 +104,36 @@ security:
     # actuator 监控配置
     - /actuator
     - /actuator/**
+
+springdoc:
+  api-docs:
+    # 是否开启接口文档
+    enabled: true
+  swagger-ui:
+    # 持久化认证数据
+    persistAuthorization: true
+  info:
+    # 标题
+    title: '标题：系统_接口文档'
+    # 描述
+    description: '描述：用于xx'
+    # 版本
+    version: '版本号: 0.1'
+    # 作者信息
+    contact:
+      name: Lion Li
+      email: crazylionli@163.com
+      url: https://gitee.com/dromara/RuoYi-Vue-Plus
+  components:
+    # 鉴权方式配置
+    security-schemes:
+      apiKey:
+        type: APIKEY
+        in: HEADER
+        name: ${sa-token.token-name}
+  #这里定义了两个分组，可定义多个，也可以不定义
+  group-configs:
+    - group: 1.通用模块
+      packages-to-scan: com.xie.web
+    - group: 2.系统模块
+      packages-to-scan: com.xie.system

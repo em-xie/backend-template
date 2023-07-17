@@ -1,5 +1,7 @@
 package com.xie.common.core.exception;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.Serial;
 
 /**
@@ -7,7 +9,8 @@ import java.io.Serial;
  *
  * @author ruoyi
  */
-public class GlobalException extends RuntimeException {
+@Slf4j
+public class GlobalException extends RuntimeException implements Thread.UncaughtExceptionHandler {
 
     @Serial
     private static final long serialVersionUID = 1L;
@@ -49,5 +52,10 @@ public class GlobalException extends RuntimeException {
     public GlobalException setMessage(String message) {
         this.message = message;
         return this;
+    }
+
+    @Override
+    public void uncaughtException(Thread t, Throwable e) {
+        log.error("Exception in thread {} ", t.getName(), e);
     }
 }
