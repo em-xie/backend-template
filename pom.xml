@@ -23,8 +23,12 @@
         <spring-boot.mybatis>3.0.1</spring-boot.mybatis>
         <springdoc.version>2.1.0</springdoc.version>
         <therapi-javadoc.version>0.15.0</therapi-javadoc.version>
+        <poi.version>5.2.3</poi.version>
+        <easyexcel.version>3.3.1</easyexcel.version>
         <hutool.version>5.8.18</hutool.version>
+        <spring-boot.mybatis>3.0.1</spring-boot.mybatis>
         <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
+        <bouncycastle.version>1.72</bouncycastle.version>
         <okhttp.version>4.10.0</okhttp.version>
         <redisson.version>3.20.1</redisson.version>
         <lock4j.version>2.2.4</lock4j.version>
@@ -154,9 +158,40 @@
             </dependency>
 
             <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.poi</groupId>
+                        <artifactId>poi-ooxml-schemas</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+
+
+            <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
                 <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- 加密包引入 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk15to18</artifactId>
+                <version>${bouncycastle.version}</version>
             </dependency>
 
             <!-- Sa-Token 权限认证, 在线文档：http://sa-token.dev33.cn/ -->

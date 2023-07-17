@@ -36,11 +36,17 @@
             <groupId>com.xie</groupId>
             <artifactId>pure-common-mybatis</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>pure-common-excel</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.xie</groupId>
             <artifactId>pure-system</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>pure-common-encrypt</artifactId>
+        </dependency>
     </dependencies>
 </project>

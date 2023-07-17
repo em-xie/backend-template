@@ -28,5 +28,7 @@
         <module>pure-common-json</module>
         <module>pure-common-social</module>
         <module>pure-common-redis</module>
+        <module>pure-common-excel</module>
+        <module>pure-common-encrypt</module>
     </modules>
 </project>

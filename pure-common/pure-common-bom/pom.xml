@@ -69,6 +69,17 @@
                 <artifactId>pure-common-redis</artifactId>
                 <version>${revision}</version>
             </dependency>
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>pure-common-excel</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>pure-common-encrypt</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 </project>
