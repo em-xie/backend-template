@@ -84,6 +84,11 @@
                 <artifactId>pure-common-oss</artifactId>
                 <version>${revision}</version>
             </dependency>
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>pure-common-log</artifactId>
+                <version>${revision}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

@@ -39,6 +39,8 @@
         <!-- OSS 配置 -->
         <aws-java-sdk-s3.version>1.12.400</aws-java-sdk-s3.version>
 
+        <alibaba-ttl.version>2.14.2</alibaba-ttl.version>
+
         <!-- 插件版本 -->
         <maven-jar-plugin.version>3.2.2</maven-jar-plugin.version>
         <maven-war-plugin.version>3.2.2</maven-war-plugin.version>
@@ -232,6 +234,12 @@
                 <groupId>io.github.linpeilie</groupId>
                 <artifactId>mapstruct-plus-spring-boot-starter</artifactId>
                 <version>${mapstruct-plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>transmittable-thread-local</artifactId>
+                <version>${alibaba-ttl.version}</version>
             </dependency>
 
             <!-- common 的依赖配置-->
