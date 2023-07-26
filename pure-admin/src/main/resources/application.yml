@@ -156,7 +156,7 @@ mybatis-encryptor:
 # api接口加密
 api-decrypt:
   # 是否开启全局接口加密
-  enabled: false
+  enabled: true
   # AES 加密头标识
   headerFlag: encrypt-key
   # 公私钥 非对称算法的公私钥 如：SM2，RSA 使用者请自行更换

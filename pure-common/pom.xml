@@ -30,5 +30,6 @@
         <module>pure-common-redis</module>
         <module>pure-common-excel</module>
         <module>pure-common-encrypt</module>
+        <module>pure-common-oss</module>
     </modules>
 </project>

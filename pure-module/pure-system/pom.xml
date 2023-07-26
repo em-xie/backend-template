@@ -39,5 +39,20 @@
             <groupId>com.xie</groupId>
             <artifactId>pure-common-security</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>pure-common-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>pure-common-excel</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.xie</groupId>
+            <artifactId>pure-common-oss</artifactId>
+        </dependency>
     </dependencies>
 </project>
