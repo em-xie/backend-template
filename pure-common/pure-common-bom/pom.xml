@@ -89,7 +89,11 @@
                 <artifactId>pure-common-log</artifactId>
                 <version>${revision}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.xie</groupId>
+                <artifactId>pure-common-mail</artifactId>
+                <version>${revision}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

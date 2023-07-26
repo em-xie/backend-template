@@ -32,5 +32,6 @@
         <module>pure-common-encrypt</module>
         <module>pure-common-oss</module>
         <module>pure-common-log</module>
+        <module>pure-common-mail</module>
     </modules>
 </project>
