@@ -33,5 +33,6 @@
         <module>pure-common-oss</module>
         <module>pure-common-log</module>
         <module>pure-common-mail</module>
+        <module>pure-common-websocket</module>
     </modules>
 </project>
